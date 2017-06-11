@@ -6,8 +6,9 @@ environment:
     PYTHON_ARCH: "32"
 
     CONAN_UPLOAD: 1
-    CONAN_REFERENCE: "HelloCI/0.1"
-    CONAN_USERNAME: "memsharded"
+    CONAN_REMOTE: https://api.bintray.com/conan/drodri/myrepo 
+    CONAN_REFERENCE: "HelloCi/0.1"
+    CONAN_USERNAME: "drodri"
     CONAN_CHANNEL: "testing"
     VS150COMNTOOLS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\"
 

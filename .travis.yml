@@ -1,0 +1,50 @@
+os: linux
+language: python
+sudo: required
+services:
+  - docker
+env:
+  global:
+    - CONAN_UPLOAD: 1
+    - CONAN_REMOTE: https://api.bintray.com/conan/drodri/myrepo 
+    - CONAN_REFERENCE: "HelloCi/0.1"
+    - CONAN_USERNAME: "drodri"
+    - CONAN_CHANNEL: "testing"
+    - CONAN_TOTAL_PAGES: 1
+
+matrix:
+   include:
+      - os: linux
+        services:
+          - docker
+        sudo: required
+        language: python
+        env: CONAN_GCC_VERSIONS=4.9 CONAN_CURRENT_PAGE=gcc_49 CONAN_USE_DOCKER=1
+      - os: linux
+        services:
+          - docker
+        sudo: required
+        language: python
+        env: CONAN_GCC_VERSIONS=5.4 CONAN_CURRENT_PAGE=gcc_54 CONAN_USE_DOCKER=1
+      - os: linux
+        services:
+          - docker
+        sudo: required
+        language: python
+        env: CONAN_GCC_VERSIONS=6.3 CONAN_CURRENT_PAGE=gcc_63 CONAN_USE_DOCKER=1   
+      - os: osx 
+        osx_image: xcode8.3 # apple-clang 8.1
+        language: generic
+        env: CONAN_CURRENT_PAGE=apple-clang_81   
+      - os: osx 
+        osx_image: xcode8.2  # apple-clang 8.0
+        language: generic
+        env: CONAN_CURRENT_PAGE=apple-clang_80    
+
+install:
+  - chmod +x .travis/install.sh
+  - ./.travis/install.sh
+
+script:
+  - chmod +x .travis/run.sh
+  - ./.travis/run.sh
