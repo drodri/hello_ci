@@ -44,7 +44,6 @@ matrix:
 install:
   - chmod +x .travis/install.sh
   - ./.travis/install.sh
-  - conan remote add myrepo https://api.bintray.com/conan/drodri/myrepo
 
 script:
   - chmod +x .travis/run.sh

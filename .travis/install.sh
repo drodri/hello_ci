@@ -22,3 +22,4 @@ fi
 pip install conan_package_tools # It install conan too
 pip install conan --upgrade
 conan user
+conan remote add myrepo https://api.bintray.com/conan/drodri/myrepo
