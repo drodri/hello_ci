@@ -25,8 +25,6 @@ environment:
           CONAN_CURRENT_PAGE: VisualStudio_12_x86_64
         - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
           CONAN_CURRENT_PAGE: VisualStudio_12_x86
-        - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-          CONAN_CURRENT_PAGE: VisualStudio_10_x86
 
 install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
