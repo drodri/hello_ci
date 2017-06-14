@@ -5,8 +5,7 @@ services:
   - docker
 env:
   global:
-    - CONAN_UPLOAD: 1
-    - CONAN_REMOTE: myrepo
+    - CONAN_UPLOAD: https://api.bintray.com/conan/drodri/myrepo
     - CONAN_REFERENCE: "HelloCi/0.1"
     - CONAN_USERNAME: "drodri"
     - CONAN_CHANNEL: "testing"

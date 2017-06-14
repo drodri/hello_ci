@@ -5,8 +5,7 @@ environment:
     PYTHON_VERSION: "2.7.8"
     PYTHON_ARCH: "32"
 
-    CONAN_UPLOAD: 1
-    CONAN_REMOTE: myrepo 
+    CONAN_UPLOAD: https://api.bintray.com/conan/drodri/myrepo
     CONAN_REFERENCE: "HelloCi/0.1"
     CONAN_USERNAME: "drodri"
     CONAN_CHANNEL: "testing"
@@ -23,9 +22,8 @@ environment:
 
 install:
   - set PATH=%PATH%;%PYTHON%/Scripts/
+  - pip.exe install conan
   - pip.exe install conan_package_tools # It install conan too
-  - pip.exe install conan --upgrade
-  - conan remote add myrepo https://api.bintray.com/conan/drodri/myrepo
   - conan user # It creates the conan data directory
 
 test_script:
