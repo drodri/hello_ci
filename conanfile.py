@@ -12,7 +12,7 @@ class HellociConan(ConanFile):
     default_options = "shared=False"
     generators = "cmake"
     exports_sources = "src/*"
-    requires = "zlib/1.2.8@lasote/stable"
+    build_requires = "Catch/1.9.4@gasuketsu/stable"
 
     def build(self):
         cmake = CMake(self)
